@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Beranda{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5" data-aos="fade-up">
+  <h1 class="fw-bold text-primary">Selamat Datang, {{ santri.nama }}!</h1>
+  <p class="lead text-muted mb-4">Selamat datang di Aplikasi Evaluasi Akhir Sandbox Django. Ukur kemampuanmu sekarang!</p>
+
+  <div class="card shadow-lg mx-auto border-0" style="max-width: 500px;">
+    <div class="card-body">
+      <!-- Ikon buku biru -->
+      <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" width="120" class="mb-3" alt="Flat Blue Book Icon">
+
+      <h5 class="fw-semibold">Siap untuk mengerjakan evaluasi?</h5>
+      <a href="{% url 'evaluasi' %}" class="btn btn-primary mt-3 px-4 py-2">🚀 Mulai Evaluasi Sekarang</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

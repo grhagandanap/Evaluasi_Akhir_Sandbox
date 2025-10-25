@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}Evaluasi{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="text-center mb-4 fw-bold text-primary">Evaluasi Akhir</h2>
+
+  <!-- Timer Section -->
+  <div class="alert alert-info text-center fw-bold fs-5" id="timer-box">
+    ⏱️ Waktu tersisa: <span id="timer">05:00</span>
+  </div>
+
+  <form method="POST" id="evaluasiForm">
+    {% csrf_token %}
+
+    {% for field in form %}
+      {% if field.is_hidden %}
+        {{ field }}
+      {% else %}
+      <div class="card mb-4 shadow-lg border-0 rounded-3" data-aos="fade-up">
+        <div class="card-header bg-primary text-white fw-semibold fs-5">
+          Soal {{ forloop.counter }}
+        </div>
+
+        <div class="card-body">
+          <p class="card-text fs-5">{{ field.label }}</p>
+          {% for choice in field %}
+            <div class="form-check mb-2">
+              {{ choice.tag }}
+              <label class="form-check-label ms-1">{{ choice.choice_label }}</label>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="text-center mt-3">
+      <button type="submit" class="btn btn-primary px-4 py-2 fw-bold">Kirim Jawaban ✅</button>
+    </div>
+  </form>
+</div>
+
+<!-- Timer Script -->
+<script>
+  let totalTime = 300;
+  let remainingTime = totalTime;
+  const timerDisplay = document.getElementById('timer');
+  const form = document.getElementById('evaluasiForm');
+  const durasiInput = document.getElementsByName('durasi_detik')[0];
+
+  function updateTimer() {
+    const minutes = Math.floor(remainingTime / 60);
+    const seconds = remainingTime % 60;
+    timerDisplay.textContent = `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+
+    if (remainingTime <= 0) {
+      clearInterval(timerInterval);
+      alert('⏰ Waktu habis! Jawaban Anda akan dikirim otomatis.');
+      durasiInput.value = totalTime;
+      form.submit();
+    }
+    remainingTime--;
+  }
+
+  const timerInterval = setInterval(updateTimer, 1000);
+
+  form.addEventListener('submit', function() {
+    durasiInput.value = totalTime - remainingTime;
+  });
+</script>
+{% endblock %}
