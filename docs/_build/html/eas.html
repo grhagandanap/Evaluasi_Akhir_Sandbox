@@ -1,0 +1,1322 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eas package &mdash; Evaluasi Akhir Sandbox 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="eas.migrations package" href="eas.migrations.html" />
+    <link rel="prev" title="Evaluasi Akhir Sandbox documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Evaluasi Akhir Sandbox
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">eas package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="eas.migrations.html">eas.migrations package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-eas.admin">eas.admin module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#eas.admin.PilihanJawabanAdmin"><code class="docutils literal notranslate"><span class="pre">PilihanJawabanAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eas.admin.PilihanJawabanAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">PilihanJawabanAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.admin.PilihanJawabanAdmin.list_filter"><code class="docutils literal notranslate"><span class="pre">PilihanJawabanAdmin.list_filter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.admin.PilihanJawabanAdmin.media"><code class="docutils literal notranslate"><span class="pre">PilihanJawabanAdmin.media</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#eas.admin.SantriAdmin"><code class="docutils literal notranslate"><span class="pre">SantriAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eas.admin.SantriAdmin.get_username"><code class="docutils literal notranslate"><span class="pre">SantriAdmin.get_username()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.admin.SantriAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">SantriAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.admin.SantriAdmin.media"><code class="docutils literal notranslate"><span class="pre">SantriAdmin.media</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.admin.SantriAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">SantriAdmin.search_fields</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#eas.admin.SoalAdmin"><code class="docutils literal notranslate"><span class="pre">SoalAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eas.admin.SoalAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">SoalAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.admin.SoalAdmin.media"><code class="docutils literal notranslate"><span class="pre">SoalAdmin.media</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.admin.SoalAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">SoalAdmin.search_fields</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-eas.apps">eas.apps module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#eas.apps.EasConfig"><code class="docutils literal notranslate"><span class="pre">EasConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eas.apps.EasConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">EasConfig.default_auto_field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.apps.EasConfig.name"><code class="docutils literal notranslate"><span class="pre">EasConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-eas.forms">eas.forms module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#eas.forms.EvaluasiForm"><code class="docutils literal notranslate"><span class="pre">EvaluasiForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eas.forms.EvaluasiForm.durasi_detik"><code class="docutils literal notranslate"><span class="pre">EvaluasiForm.durasi_detik</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.forms.EvaluasiForm.base_fields"><code class="docutils literal notranslate"><span class="pre">EvaluasiForm.base_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.forms.EvaluasiForm.declared_fields"><code class="docutils literal notranslate"><span class="pre">EvaluasiForm.declared_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.forms.EvaluasiForm.media"><code class="docutils literal notranslate"><span class="pre">EvaluasiForm.media</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-eas.models">eas.models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#eas.models.Evaluasi"><code class="docutils literal notranslate"><span class="pre">Evaluasi</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.santri"><code class="docutils literal notranslate"><span class="pre">Evaluasi.santri</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.soal"><code class="docutils literal notranslate"><span class="pre">Evaluasi.soal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.jawaban_santri"><code class="docutils literal notranslate"><span class="pre">Evaluasi.jawaban_santri</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.is_correct"><code class="docutils literal notranslate"><span class="pre">Evaluasi.is_correct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.__str__"><code class="docutils literal notranslate"><span class="pre">Evaluasi.__str__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Evaluasi.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Evaluasi.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.id"><code class="docutils literal notranslate"><span class="pre">Evaluasi.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Evaluasi.is_correct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">Evaluasi.jawaban_santri</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.objects"><code class="docutils literal notranslate"><span class="pre">Evaluasi.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">Evaluasi.santri</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.santri_id"><code class="docutils literal notranslate"><span class="pre">Evaluasi.santri_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">Evaluasi.soal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Evaluasi.soal_id"><code class="docutils literal notranslate"><span class="pre">Evaluasi.soal_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#eas.models.Nilai"><code class="docutils literal notranslate"><span class="pre">Nilai</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.santri"><code class="docutils literal notranslate"><span class="pre">Nilai.santri</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.nilai_akhir"><code class="docutils literal notranslate"><span class="pre">Nilai.nilai_akhir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.tanggal"><code class="docutils literal notranslate"><span class="pre">Nilai.tanggal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.durasi_detik"><code class="docutils literal notranslate"><span class="pre">Nilai.durasi_detik</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.__str__"><code class="docutils literal notranslate"><span class="pre">Nilai.__str__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Nilai.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Nilai.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">Nilai.durasi_detik</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.get_next_by_tanggal"><code class="docutils literal notranslate"><span class="pre">Nilai.get_next_by_tanggal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.get_previous_by_tanggal"><code class="docutils literal notranslate"><span class="pre">Nilai.get_previous_by_tanggal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.id"><code class="docutils literal notranslate"><span class="pre">Nilai.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">Nilai.nilai_akhir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.objects"><code class="docutils literal notranslate"><span class="pre">Nilai.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">Nilai.santri</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Nilai.santri_id"><code class="docutils literal notranslate"><span class="pre">Nilai.santri_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">Nilai.tanggal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#eas.models.PilihanJawaban"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.PilihanJawaban.soal"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.soal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.PilihanJawaban.kode_pilihan"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.kode_pilihan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.PilihanJawaban.teks_pilihan"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.teks_pilihan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.PilihanJawaban.__str__"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.__str__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.PilihanJawaban.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.PilihanJawaban.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.PilihanJawaban.get_kode_pilihan_display"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.get_kode_pilihan_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.PilihanJawaban.id"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.kode_pilihan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.PilihanJawaban.objects"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.soal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.PilihanJawaban.soal_id"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.soal_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">PilihanJawaban.teks_pilihan</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#eas.models.Santri"><code class="docutils literal notranslate"><span class="pre">Santri</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.user"><code class="docutils literal notranslate"><span class="pre">Santri.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.nama"><code class="docutils literal notranslate"><span class="pre">Santri.nama</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.santri_id"><code class="docutils literal notranslate"><span class="pre">Santri.santri_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.usia"><code class="docutils literal notranslate"><span class="pre">Santri.usia</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.alamat"><code class="docutils literal notranslate"><span class="pre">Santri.alamat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.gender"><code class="docutils literal notranslate"><span class="pre">Santri.gender</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.__str__"><code class="docutils literal notranslate"><span class="pre">Santri.__str__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Santri.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.GENDER_CHOICES"><code class="docutils literal notranslate"><span class="pre">Santri.GENDER_CHOICES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Santri.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">Santri.alamat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.evaluasi_set"><code class="docutils literal notranslate"><span class="pre">Santri.evaluasi_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">Santri.gender</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.get_gender_display"><code class="docutils literal notranslate"><span class="pre">Santri.get_gender_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.id"><code class="docutils literal notranslate"><span class="pre">Santri.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">Santri.nama</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.nilai"><code class="docutils literal notranslate"><span class="pre">Santri.nilai</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.objects"><code class="docutils literal notranslate"><span class="pre">Santri.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">Santri.santri_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">Santri.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Santri.user_id"><code class="docutils literal notranslate"><span class="pre">Santri.user_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">Santri.usia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#eas.models.Soal"><code class="docutils literal notranslate"><span class="pre">Soal</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Soal.teks_soal"><code class="docutils literal notranslate"><span class="pre">Soal.teks_soal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Soal.jawaban_benar"><code class="docutils literal notranslate"><span class="pre">Soal.jawaban_benar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Soal.__str__"><code class="docutils literal notranslate"><span class="pre">Soal.__str__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Soal.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Soal.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Soal.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Soal.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Soal.evaluasi_set"><code class="docutils literal notranslate"><span class="pre">Soal.evaluasi_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Soal.get_jawaban_benar_display"><code class="docutils literal notranslate"><span class="pre">Soal.get_jawaban_benar_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Soal.id"><code class="docutils literal notranslate"><span class="pre">Soal.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">Soal.jawaban_benar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Soal.objects"><code class="docutils literal notranslate"><span class="pre">Soal.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eas.models.Soal.pilihan"><code class="docutils literal notranslate"><span class="pre">Soal.pilihan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">Soal.teks_soal</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-eas.tests">eas.tests module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-eas.urls">eas.urls module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-eas.views">eas.views module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#eas.views.arsip"><code class="docutils literal notranslate"><span class="pre">arsip()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eas.views.evaluasi"><code class="docutils literal notranslate"><span class="pre">evaluasi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eas.views.home"><code class="docutils literal notranslate"><span class="pre">home()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eas.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eas.views.peringkat"><code class="docutils literal notranslate"><span class="pre">peringkat()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-eas">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tugasakhir.html">tugasakhir package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Evaluasi Akhir Sandbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">eas package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/eas.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="eas-package">
+<h1>eas package<a class="headerlink" href="#eas-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="eas.migrations.html">eas.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="eas.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eas.migrations.html#module-eas.migrations.0001_initial">eas.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="eas.migrations.html#eas.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="eas.migrations.html#module-eas.migrations.0002_alter_nilai_santri">eas.migrations.0002_alter_nilai_santri module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="eas.migrations.html#eas.migrations.0002_alter_nilai_santri.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0002_alter_nilai_santri.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0002_alter_nilai_santri.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="eas.migrations.html#module-eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more">eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="eas.migrations.html#eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="eas.migrations.html#module-eas.migrations.0004_santri_santri_id_alter_santri_gender">eas.migrations.0004_santri_santri_id_alter_santri_gender module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="eas.migrations.html#eas.migrations.0004_santri_santri_id_alter_santri_gender.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0004_santri_santri_id_alter_santri_gender.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0004_santri_santri_id_alter_santri_gender.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="eas.migrations.html#module-eas.migrations.0005_evaluasi_is_correct">eas.migrations.0005_evaluasi_is_correct module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="eas.migrations.html#eas.migrations.0005_evaluasi_is_correct.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0005_evaluasi_is_correct.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0005_evaluasi_is_correct.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="eas.migrations.html#module-eas.migrations.0006_santri_user">eas.migrations.0006_santri_user module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="eas.migrations.html#eas.migrations.0006_santri_user.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0006_santri_user.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0006_santri_user.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="eas.migrations.html#module-eas.migrations.0007_nilai_durasi_detik">eas.migrations.0007_nilai_durasi_detik module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="eas.migrations.html#eas.migrations.0007_nilai_durasi_detik.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0007_nilai_durasi_detik.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0007_nilai_durasi_detik.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="eas.migrations.html#module-eas.migrations.0008_alter_nilai_durasi_detik">eas.migrations.0008_alter_nilai_durasi_detik module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="eas.migrations.html#eas.migrations.0008_alter_nilai_durasi_detik.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0008_alter_nilai_durasi_detik.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="eas.migrations.html#eas.migrations.0008_alter_nilai_durasi_detik.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="eas.migrations.html#module-eas.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-eas.admin">
+<span id="eas-admin-module"></span><h2>eas.admin module<a class="headerlink" href="#module-eas.admin" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.admin.PilihanJawabanAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.admin.</span></span><span class="sig-name descname"><span class="pre">PilihanJawabanAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/admin.html#PilihanJawabanAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.admin.PilihanJawabanAdmin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.admin.PilihanJawabanAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('soal',</span> <span class="pre">'kode_pilihan',</span> <span class="pre">'teks_pilihan')</span></em><a class="headerlink" href="#eas.admin.PilihanJawabanAdmin.list_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.admin.PilihanJawabanAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('soal',)</span></em><a class="headerlink" href="#eas.admin.PilihanJawabanAdmin.list_filter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="eas.admin.PilihanJawabanAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#eas.admin.PilihanJawabanAdmin.media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.admin.SantriAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.admin.</span></span><span class="sig-name descname"><span class="pre">SantriAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/admin.html#SantriAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.admin.SantriAdmin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.admin.SantriAdmin.get_username">
+<span class="sig-name descname"><span class="pre">get_username</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/admin.html#SantriAdmin.get_username"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.admin.SantriAdmin.get_username" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.admin.SantriAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('santri_id',</span> <span class="pre">'nama',</span> <span class="pre">'usia',</span> <span class="pre">'gender',</span> <span class="pre">'get_username')</span></em><a class="headerlink" href="#eas.admin.SantriAdmin.list_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="eas.admin.SantriAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#eas.admin.SantriAdmin.media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.admin.SantriAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('nama',)</span></em><a class="headerlink" href="#eas.admin.SantriAdmin.search_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.admin.SoalAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.admin.</span></span><span class="sig-name descname"><span class="pre">SoalAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/admin.html#SoalAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.admin.SoalAdmin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.admin.SoalAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',</span> <span class="pre">'teks_soal',</span> <span class="pre">'jawaban_benar')</span></em><a class="headerlink" href="#eas.admin.SoalAdmin.list_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="eas.admin.SoalAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#eas.admin.SoalAdmin.media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.admin.SoalAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('teks_soal',)</span></em><a class="headerlink" href="#eas.admin.SoalAdmin.search_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.apps">
+<span id="eas-apps-module"></span><h2>eas.apps module<a class="headerlink" href="#module-eas.apps" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.apps.EasConfig">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.apps.</span></span><span class="sig-name descname"><span class="pre">EasConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/apps.html#EasConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.apps.EasConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.apps.EasConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#eas.apps.EasConfig.default_auto_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.apps.EasConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'eas'</span></em><a class="headerlink" href="#eas.apps.EasConfig.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.forms">
+<span id="eas-forms-module"></span><h2>eas.forms module<a class="headerlink" href="#module-eas.forms" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.forms.EvaluasiForm">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.forms.</span></span><span class="sig-name descname"><span class="pre">EvaluasiForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soal_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/forms.html#EvaluasiForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.forms.EvaluasiForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Form</span></code></p>
+<p>Form dinamis untuk evaluasi (kuis) santri.</p>
+<p>Form ini dibuat secara dinamis berdasarkan daftar soal (<cite>soal_list</cite>) yang diberikan saat inisialisasi.
+Untuk setiap soal, form akan men-generate satu field pilihan jawaban (ChoiceField)
+dengan opsi radio button (A, B, C, D).
+Selain itu, form juga menyertakan field tersembunyi <cite>durasi_detik</cite> untuk menyimpan
+waktu pengerjaan evaluasi dalam satuan detik.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> (<em>tuple</em>) – Argumen standar untuk inisialisasi form Django.</p></li>
+<li><p><strong>soal_list</strong> (<em>list</em><em> of </em><a class="reference internal" href="#eas.models.Soal" title="eas.models.Soal"><em>Soal</em></a><em>, </em><em>optional</em>) – Daftar objek <cite>Soal</cite> yang akan digunakan untuk membentuk field dinamis.
+Setiap <cite>Soal</cite> diasumsikan memiliki relasi ke model <cite>PilihanJawaban</cite>.</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Keyword arguments tambahan untuk <cite>forms.Form</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">jawaban_&lt;soal.id&gt;</span></span></dt>
+<dd><p>Field pilihan jawaban untuk setiap soal yang di-generate secara dinamis.
+Label field berisi teks soal, dan opsinya diambil dari model <cite>PilihanJawaban</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ChoiceField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.forms.EvaluasiForm.durasi_detik">
+<span class="sig-name descname"><span class="pre">durasi_detik</span></span><a class="headerlink" href="#eas.forms.EvaluasiForm.durasi_detik" title="Link to this definition"></a></dt>
+<dd><p>Field tersembunyi (HiddenInput) untuk menyimpan lama waktu pengerjaan (detik).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IntegerField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">evaluasi.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Soal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">soal_list</span> <span class="o">=</span> <span class="n">Soal</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[:</span><span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">form</span> <span class="o">=</span> <span class="n">EvaluasiForm</span><span class="p">(</span><span class="n">soal_list</span><span class="o">=</span><span class="n">soal_list</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">form</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">dict_keys([&#39;jawaban_1&#39;, &#39;jawaban_2&#39;, &#39;jawaban_3&#39;, &#39;jawaban_4&#39;, &#39;durasi_detik&#39;])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Field <cite>durasi_detik</cite> diisi dari JavaScript timer di template frontend.</p></li>
+<li><p>Setiap field <cite>jawaban_&lt;soal.id&gt;</cite> wajib diisi (<cite>required=True</cite>).</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.forms.EvaluasiForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#eas.forms.EvaluasiForm.base_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.forms.EvaluasiForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#eas.forms.EvaluasiForm.declared_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="eas.forms.EvaluasiForm.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#eas.forms.EvaluasiForm.media" title="Link to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.models">
+<span id="eas-models-module"></span><h2>eas.models module<a class="headerlink" href="#module-eas.models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.models.Evaluasi">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.models.</span></span><span class="sig-name descname"><span class="pre">Evaluasi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/models.html#Evaluasi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.models.Evaluasi" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model that stores the evaluation results (answers) for each student and question.</p>
+<p>Each record logs a student’s answer to a specific question,
+including whether the answer was correct or incorrect.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.santri">
+<span class="sig-name descname"><span class="pre">santri</span></span><a class="headerlink" href="#eas.models.Evaluasi.santri" title="Link to this definition"></a></dt>
+<dd><p>The related <cite>Santri</cite> who answered the question.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ForeignKey</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.soal">
+<span class="sig-name descname"><span class="pre">soal</span></span><a class="headerlink" href="#eas.models.Evaluasi.soal" title="Link to this definition"></a></dt>
+<dd><p>The related <cite>Soal</cite> that was answered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ForeignKey</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.jawaban_santri">
+<span class="sig-name descname"><span class="pre">jawaban_santri</span></span><a class="headerlink" href="#eas.models.Evaluasi.jawaban_santri" title="Link to this definition"></a></dt>
+<dd><p>The letter representing the student’s chosen answer (A/B/C/D).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CharField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.is_correct">
+<span class="sig-name descname"><span class="pre">is_correct</span></span><a class="headerlink" href="#eas.models.Evaluasi.is_correct" title="Link to this definition"></a></dt>
+<dd><p>Indicates whether the student’s answer was correct.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>BooleanField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/models.html#Evaluasi.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.models.Evaluasi.__str__" title="Link to this definition"></a></dt>
+<dd><p>Returns a formatted string like “&lt;Student Name&gt; - &lt;Question ID&gt;”.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.DoesNotExist">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#eas.models.Evaluasi.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.MultipleObjectsReturned">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#eas.models.Evaluasi.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#eas.models.Evaluasi.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">is_correct</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">jawaban_santri</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#eas.models.Evaluasi.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">santri</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.santri_id">
+<span class="sig-name descname"><span class="pre">santri_id</span></span><a class="headerlink" href="#eas.models.Evaluasi.santri_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">soal</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Evaluasi.soal_id">
+<span class="sig-name descname"><span class="pre">soal_id</span></span><a class="headerlink" href="#eas.models.Evaluasi.soal_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.models.Nilai">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.models.</span></span><span class="sig-name descname"><span class="pre">Nilai</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/models.html#Nilai"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.models.Nilai" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing the final score of a student.</p>
+<p>The score is calculated based on the number of correct answers
+from the evaluations and includes the total time taken in seconds.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Nilai.santri">
+<span class="sig-name descname"><span class="pre">santri</span></span><a class="headerlink" href="#eas.models.Nilai.santri" title="Link to this definition"></a></dt>
+<dd><p>A one-to-one relationship to the <cite>Santri</cite> model. Each student has only one final score.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>OneToOneField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Nilai.nilai_akhir">
+<span class="sig-name descname"><span class="pre">nilai_akhir</span></span><a class="headerlink" href="#eas.models.Nilai.nilai_akhir" title="Link to this definition"></a></dt>
+<dd><p>The final score on a 0–100 scale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>FloatField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Nilai.tanggal">
+<span class="sig-name descname"><span class="pre">tanggal</span></span><a class="headerlink" href="#eas.models.Nilai.tanggal" title="Link to this definition"></a></dt>
+<dd><p>Automatically stores the timestamp when the record was first created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DateTimeField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Nilai.durasi_detik">
+<span class="sig-name descname"><span class="pre">durasi_detik</span></span><a class="headerlink" href="#eas.models.Nilai.durasi_detik" title="Link to this definition"></a></dt>
+<dd><p>The duration of the evaluation process in seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IntegerField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.models.Nilai.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/models.html#Nilai.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.models.Nilai.__str__" title="Link to this definition"></a></dt>
+<dd><p>Returns a formatted string like “&lt;Student Name&gt; - &lt;Final Score&gt;”.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="eas.models.Nilai.DoesNotExist">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#eas.models.Nilai.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="eas.models.Nilai.MultipleObjectsReturned">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#eas.models.Nilai.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">durasi_detik</span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.models.Nilai.get_next_by_tanggal">
+<span class="sig-name descname"><span class="pre">get_next_by_tanggal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">tanggal&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eas.models.Nilai.get_next_by_tanggal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.models.Nilai.get_previous_by_tanggal">
+<span class="sig-name descname"><span class="pre">get_previous_by_tanggal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">tanggal&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eas.models.Nilai.get_previous_by_tanggal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Nilai.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#eas.models.Nilai.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">nilai_akhir</span></span><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Nilai.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#eas.models.Nilai.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">santri</span></span><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Nilai.santri_id">
+<span class="sig-name descname"><span class="pre">santri_id</span></span><a class="headerlink" href="#eas.models.Nilai.santri_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">tanggal</span></span><a class="headerlink" href="#id7" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.models.</span></span><span class="sig-name descname"><span class="pre">PilihanJawaban</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/models.html#PilihanJawaban"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.models.PilihanJawaban" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing answer choices for each question.</p>
+<p>Each answer choice is linked to a specific <cite>Soal</cite> through a foreign key
+relationship and contains both a choice code (A–D) and the answer text.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban.soal">
+<span class="sig-name descname"><span class="pre">soal</span></span><a class="headerlink" href="#eas.models.PilihanJawaban.soal" title="Link to this definition"></a></dt>
+<dd><p>The related <cite>Soal</cite> instance for this answer choice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ForeignKey</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban.kode_pilihan">
+<span class="sig-name descname"><span class="pre">kode_pilihan</span></span><a class="headerlink" href="#eas.models.PilihanJawaban.kode_pilihan" title="Link to this definition"></a></dt>
+<dd><p>The letter representing the choice (A/B/C/D).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CharField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban.teks_pilihan">
+<span class="sig-name descname"><span class="pre">teks_pilihan</span></span><a class="headerlink" href="#eas.models.PilihanJawaban.teks_pilihan" title="Link to this definition"></a></dt>
+<dd><p>The textual content of the answer choice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CharField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/models.html#PilihanJawaban.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.models.PilihanJawaban.__str__" title="Link to this definition"></a></dt>
+<dd><p>Returns a formatted string like “A. Answer Text”.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban.DoesNotExist">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#eas.models.PilihanJawaban.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban.MultipleObjectsReturned">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#eas.models.PilihanJawaban.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban.get_kode_pilihan_display">
+<span class="sig-name descname"><span class="pre">get_kode_pilihan_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.CharField:</span> <span class="pre">kode_pilihan&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eas.models.PilihanJawaban.get_kode_pilihan_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#eas.models.PilihanJawaban.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">kode_pilihan</span></span><a class="headerlink" href="#id8" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#eas.models.PilihanJawaban.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">soal</span></span><a class="headerlink" href="#id9" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.PilihanJawaban.soal_id">
+<span class="sig-name descname"><span class="pre">soal_id</span></span><a class="headerlink" href="#eas.models.PilihanJawaban.soal_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">teks_pilihan</span></span><a class="headerlink" href="#id10" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.models.Santri">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.models.</span></span><span class="sig-name descname"><span class="pre">Santri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/models.html#Santri"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.models.Santri" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing a student (evaluation participant).</p>
+<p>Each student is optionally linked to a Django <cite>User</cite> account through a
+one-to-one relationship and stores basic personal information such as
+name, age, address, and gender.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#eas.models.Santri.user" title="Link to this definition"></a></dt>
+<dd><p>Optional relationship to the Django <cite>User</cite> model for authentication.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>OneToOneField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.nama">
+<span class="sig-name descname"><span class="pre">nama</span></span><a class="headerlink" href="#eas.models.Santri.nama" title="Link to this definition"></a></dt>
+<dd><p>The student’s full name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CharField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.santri_id">
+<span class="sig-name descname"><span class="pre">santri_id</span></span><a class="headerlink" href="#eas.models.Santri.santri_id" title="Link to this definition"></a></dt>
+<dd><p>A unique student ID, with the default format “ARX000-00000”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CharField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.usia">
+<span class="sig-name descname"><span class="pre">usia</span></span><a class="headerlink" href="#eas.models.Santri.usia" title="Link to this definition"></a></dt>
+<dd><p>The student’s age in years.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IntegerField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.alamat">
+<span class="sig-name descname"><span class="pre">alamat</span></span><a class="headerlink" href="#eas.models.Santri.alamat" title="Link to this definition"></a></dt>
+<dd><p>The student’s residential address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>TextField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.gender">
+<span class="sig-name descname"><span class="pre">gender</span></span><a class="headerlink" href="#eas.models.Santri.gender" title="Link to this definition"></a></dt>
+<dd><p>The student’s gender (‘I’ for Ikhwan, ‘A’ for Akhwat).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CharField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.models.Santri.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/models.html#Santri.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.models.Santri.__str__" title="Link to this definition"></a></dt>
+<dd><p>Returns the student’s name as the string representation.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="eas.models.Santri.DoesNotExist">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#eas.models.Santri.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.GENDER_CHOICES">
+<span class="sig-name descname"><span class="pre">GENDER_CHOICES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('I',</span> <span class="pre">'Ikhwan'),</span> <span class="pre">('A',</span> <span class="pre">'Akhwat')]</span></em><a class="headerlink" href="#eas.models.Santri.GENDER_CHOICES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="eas.models.Santri.MultipleObjectsReturned">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#eas.models.Santri.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">alamat</span></span><a class="headerlink" href="#id11" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.evaluasi_set">
+<span class="sig-name descname"><span class="pre">evaluasi_set</span></span><a class="headerlink" href="#eas.models.Santri.evaluasi_set" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">gender</span></span><a class="headerlink" href="#id12" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.models.Santri.get_gender_display">
+<span class="sig-name descname"><span class="pre">get_gender_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.CharField:</span> <span class="pre">gender&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eas.models.Santri.get_gender_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#eas.models.Santri.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-name descname"><span class="pre">nama</span></span><a class="headerlink" href="#id13" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.nilai">
+<span class="sig-name descname"><span class="pre">nilai</span></span><a class="headerlink" href="#eas.models.Santri.nilai" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related object on the reverse side of a one-to-one
+relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Place.restaurant</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#eas.models.Santri.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-name descname"><span class="pre">santri_id</span></span><a class="headerlink" href="#id14" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id15">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#id15" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Santri.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#eas.models.Santri.user_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-name descname"><span class="pre">usia</span></span><a class="headerlink" href="#id16" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.models.Soal">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.models.</span></span><span class="sig-name descname"><span class="pre">Soal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/models.html#Soal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.models.Soal" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing an evaluation question.</p>
+<p>Each <cite>Soal</cite> contains a question text and one correct answer
+selected from options A, B, C, or D.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Soal.teks_soal">
+<span class="sig-name descname"><span class="pre">teks_soal</span></span><a class="headerlink" href="#eas.models.Soal.teks_soal" title="Link to this definition"></a></dt>
+<dd><p>The text of the question.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>TextField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Soal.jawaban_benar">
+<span class="sig-name descname"><span class="pre">jawaban_benar</span></span><a class="headerlink" href="#eas.models.Soal.jawaban_benar" title="Link to this definition"></a></dt>
+<dd><p>The correct answer code (A/B/C/D) according to <cite>GRADE_CHOICES</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CharField</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.models.Soal.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/models.html#Soal.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.models.Soal.__str__" title="Link to this definition"></a></dt>
+<dd><p>Returns the question text as the string representation.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="eas.models.Soal.DoesNotExist">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#eas.models.Soal.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="eas.models.Soal.MultipleObjectsReturned">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#eas.models.Soal.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Soal.evaluasi_set">
+<span class="sig-name descname"><span class="pre">evaluasi_set</span></span><a class="headerlink" href="#eas.models.Soal.evaluasi_set" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eas.models.Soal.get_jawaban_benar_display">
+<span class="sig-name descname"><span class="pre">get_jawaban_benar_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.CharField:</span> <span class="pre">jawaban_benar&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eas.models.Soal.get_jawaban_benar_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Soal.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#eas.models.Soal.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-name descname"><span class="pre">jawaban_benar</span></span><a class="headerlink" href="#id17" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Soal.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#eas.models.Soal.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.models.Soal.pilihan">
+<span class="sig-name descname"><span class="pre">pilihan</span></span><a class="headerlink" href="#eas.models.Soal.pilihan" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-name descname"><span class="pre">teks_soal</span></span><a class="headerlink" href="#id18" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.tests">
+<span id="eas-tests-module"></span><h2>eas.tests module<a class="headerlink" href="#module-eas.tests" title="Link to this heading"></a></h2>
+</section>
+<section id="module-eas.urls">
+<span id="eas-urls-module"></span><h2>eas.urls module<a class="headerlink" href="#module-eas.urls" title="Link to this heading"></a></h2>
+</section>
+<section id="module-eas.views">
+<span id="eas-views-module"></span><h2>eas.views module<a class="headerlink" href="#module-eas.views" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="eas.views.arsip">
+<span class="sig-prename descclassname"><span class="pre">eas.views.</span></span><span class="sig-name descname"><span class="pre">arsip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/views.html#arsip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.views.arsip" title="Link to this definition"></a></dt>
+<dd><p>View for displaying the user’s evaluation archive.</p>
+<p>Shows all questions the user has answered, along with correctness information
+and the computed overall score.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – The HTTP request from the authenticated user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Renders ‘arsip.html’ template with:
+- <cite>arsip_list</cite>: All question-answer records of the user.
+- <cite>benar_count</cite>: Total number of correct answers.
+- <cite>total_soal</cite>: Total number of answered questions.
+- <cite>skor</cite>: Computed overall score (integer percentage).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="eas.views.evaluasi">
+<span class="sig-prename descclassname"><span class="pre">eas.views.</span></span><span class="sig-name descname"><span class="pre">evaluasi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/views.html#evaluasi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.views.evaluasi" title="Link to this definition"></a></dt>
+<dd><p>View for conducting the evaluation (quiz/exam).</p>
+<ul class="simple">
+<li><p>Prevents users who have already completed the test from re-taking it.</p></li>
+<li><p>Randomly selects a set of questions (4 by default) and stores them in the session.</p></li>
+<li><p>On form submission, evaluates answers, records individual results, and stores the final score.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – The HTTP request object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Renders ‘evaluasi.html’ with the evaluation form if GET request.</p></li>
+<li><p>Redirects to ‘peringkat’ (ranking page) after successful submission.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><cite>EvaluasiForm</cite> is dynamically built with question instances.</p></li>
+<li><p>Session key <cite>soal_ids</cite> stores selected question IDs to ensure consistency during submission.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="eas.views.home">
+<span class="sig-prename descclassname"><span class="pre">eas.views.</span></span><span class="sig-name descname"><span class="pre">home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/views.html#home"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.views.home" title="Link to this definition"></a></dt>
+<dd><p>View for the homepage.</p>
+<p>If the user is already authenticated, redirect them to the main dashboard (<cite>index</cite> view).
+Otherwise, render the homepage for unauthenticated visitors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – The HTTP request object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Redirects to the dashboard if logged in.</p></li>
+<li><p>Renders ‘home.html’ template otherwise.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="eas.views.index">
+<span class="sig-prename descclassname"><span class="pre">eas.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/views.html#index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.views.index" title="Link to this definition"></a></dt>
+<dd><p>Dashboard view for authenticated users.</p>
+<p>Displays the user’s profile information and checks if the user
+has already completed the evaluation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – The HTTP request object from the logged-in user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Renders ‘index.html’ template with:
+- <cite>santri</cite>: The Santri (student) object linked to the user.
+- <cite>sudah_mengerjakan</cite>: Boolean indicating if the user has taken the test.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="eas.views.peringkat">
+<span class="sig-prename descclassname"><span class="pre">eas.views.</span></span><span class="sig-name descname"><span class="pre">peringkat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/views.html#peringkat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.views.peringkat" title="Link to this definition"></a></dt>
+<dd><p>View for displaying the ranking leaderboard.</p>
+<p>Lists all participants (<cite>Nilai</cite> records) ordered by their final scores (<cite>nilai_akhir</cite>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – The HTTP request from the authenticated user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Renders ‘peringkat.html’ template with:
+- <cite>peringkat</cite>: List of all users sorted by score (descending).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-eas">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-eas" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Evaluasi Akhir Sandbox documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="eas.migrations.html" class="btn btn-neutral float-right" title="eas.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Grha Gandana Putra.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eas.migrations package &mdash; Evaluasi Akhir Sandbox 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tugasakhir package" href="tugasakhir.html" />
+    <link rel="prev" title="eas package" href="eas.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Evaluasi Akhir Sandbox
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="eas.html">eas package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="eas.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">eas.migrations package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-eas.migrations.0001_initial">eas.migrations.0001_initial module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-eas.migrations.0002_alter_nilai_santri">eas.migrations.0002_alter_nilai_santri module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more">eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-eas.migrations.0004_santri_santri_id_alter_santri_gender">eas.migrations.0004_santri_santri_id_alter_santri_gender module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-eas.migrations.0005_evaluasi_is_correct">eas.migrations.0005_evaluasi_is_correct module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-eas.migrations.0006_santri_user">eas.migrations.0006_santri_user module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-eas.migrations.0007_nilai_durasi_detik">eas.migrations.0007_nilai_durasi_detik module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-eas.migrations.0008_alter_nilai_durasi_detik">eas.migrations.0008_alter_nilai_durasi_detik module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-eas.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="eas.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eas.html#module-eas.admin">eas.admin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eas.html#module-eas.apps">eas.apps module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eas.html#module-eas.forms">eas.forms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eas.html#module-eas.models">eas.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eas.html#module-eas.tests">eas.tests module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eas.html#module-eas.urls">eas.urls module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eas.html#module-eas.views">eas.views module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eas.html#module-eas">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tugasakhir.html">tugasakhir package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Evaluasi Akhir Sandbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="eas.html">eas package</a></li>
+      <li class="breadcrumb-item active">eas.migrations package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/eas.migrations.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="eas-migrations-package">
+<h1>eas.migrations package<a class="headerlink" href="#eas-migrations-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-eas.migrations.0001_initial">
+<span id="eas-migrations-0001-initial-module"></span><h2>eas.migrations.0001_initial module<a class="headerlink" href="#module-eas.migrations.0001_initial" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.migrations.0001_initial.Migration">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.migrations.0001_initial.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/migrations/0001_initial.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.migrations.0001_initial.Migration" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0001_initial.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#eas.migrations.0001_initial.Migration.dependencies" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0001_initial.Migration.initial">
+<span class="sig-name descname"><span class="pre">initial</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#eas.migrations.0001_initial.Migration.initial" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0001_initial.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Santri',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('nama',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('usia',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('alamat',</span> <span class="pre">&lt;django.db.models.fields.TextField&gt;),</span> <span class="pre">('gender',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Soal',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('teks_soal',</span> <span class="pre">&lt;django.db.models.fields.TextField&gt;),</span> <span class="pre">('jawaban_benar',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Nilai',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('nilai_akhir',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('tanggal',</span> <span class="pre">&lt;django.db.models.fields.DateTimeField&gt;),</span> <span class="pre">('santri',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='PilihanJawaban',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('kode_pilihan',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('teks_pilihan',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('soal',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Evaluasi',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('jawaban_santri',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('santri',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('soal',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;]</span></em><a class="headerlink" href="#eas.migrations.0001_initial.Migration.operations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.migrations.0002_alter_nilai_santri">
+<span id="eas-migrations-0002-alter-nilai-santri-module"></span><h2>eas.migrations.0002_alter_nilai_santri module<a class="headerlink" href="#module-eas.migrations.0002_alter_nilai_santri" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.migrations.0002_alter_nilai_santri.Migration">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.migrations.0002_alter_nilai_santri.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/migrations/0002_alter_nilai_santri.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.migrations.0002_alter_nilai_santri.Migration" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0002_alter_nilai_santri.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('eas',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#eas.migrations.0002_alter_nilai_santri.Migration.dependencies" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0002_alter_nilai_santri.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='nilai',</span> <span class="pre">name='santri',</span> <span class="pre">field=&lt;django.db.models.fields.related.OneToOneField&gt;&gt;]</span></em><a class="headerlink" href="#eas.migrations.0002_alter_nilai_santri.Migration.operations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more">
+<span id="eas-migrations-0003-alter-pilihanjawaban-kode-pilihan-and-more-module"></span><h2>eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more module<a class="headerlink" href="#module-eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more.Migration">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/migrations/0003_alter_pilihanjawaban_kode_pilihan_and_more.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more.Migration" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('eas',</span> <span class="pre">'0002_alter_nilai_santri')]</span></em><a class="headerlink" href="#eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more.Migration.dependencies" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='pilihanjawaban',</span> <span class="pre">name='kode_pilihan',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='soal',</span> <span class="pre">name='jawaban_benar',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#eas.migrations.0003_alter_pilihanjawaban_kode_pilihan_and_more.Migration.operations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.migrations.0004_santri_santri_id_alter_santri_gender">
+<span id="eas-migrations-0004-santri-santri-id-alter-santri-gender-module"></span><h2>eas.migrations.0004_santri_santri_id_alter_santri_gender module<a class="headerlink" href="#module-eas.migrations.0004_santri_santri_id_alter_santri_gender" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.migrations.0004_santri_santri_id_alter_santri_gender.Migration">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.migrations.0004_santri_santri_id_alter_santri_gender.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/migrations/0004_santri_santri_id_alter_santri_gender.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.migrations.0004_santri_santri_id_alter_santri_gender.Migration" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0004_santri_santri_id_alter_santri_gender.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('eas',</span> <span class="pre">'0003_alter_pilihanjawaban_kode_pilihan_and_more')]</span></em><a class="headerlink" href="#eas.migrations.0004_santri_santri_id_alter_santri_gender.Migration.dependencies" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0004_santri_santri_id_alter_santri_gender.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='santri',</span> <span class="pre">name='santri_id',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='santri',</span> <span class="pre">name='gender',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#eas.migrations.0004_santri_santri_id_alter_santri_gender.Migration.operations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.migrations.0005_evaluasi_is_correct">
+<span id="eas-migrations-0005-evaluasi-is-correct-module"></span><h2>eas.migrations.0005_evaluasi_is_correct module<a class="headerlink" href="#module-eas.migrations.0005_evaluasi_is_correct" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.migrations.0005_evaluasi_is_correct.Migration">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.migrations.0005_evaluasi_is_correct.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/migrations/0005_evaluasi_is_correct.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.migrations.0005_evaluasi_is_correct.Migration" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0005_evaluasi_is_correct.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('eas',</span> <span class="pre">'0004_santri_santri_id_alter_santri_gender')]</span></em><a class="headerlink" href="#eas.migrations.0005_evaluasi_is_correct.Migration.dependencies" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0005_evaluasi_is_correct.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='evaluasi',</span> <span class="pre">name='is_correct',</span> <span class="pre">field=&lt;django.db.models.fields.BooleanField&gt;&gt;]</span></em><a class="headerlink" href="#eas.migrations.0005_evaluasi_is_correct.Migration.operations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.migrations.0006_santri_user">
+<span id="eas-migrations-0006-santri-user-module"></span><h2>eas.migrations.0006_santri_user module<a class="headerlink" href="#module-eas.migrations.0006_santri_user" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.migrations.0006_santri_user.Migration">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.migrations.0006_santri_user.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/migrations/0006_santri_user.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.migrations.0006_santri_user.Migration" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0006_santri_user.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('eas',</span> <span class="pre">'0005_evaluasi_is_correct'),</span> <span class="pre">('auth',</span> <span class="pre">'__first__')]</span></em><a class="headerlink" href="#eas.migrations.0006_santri_user.Migration.dependencies" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0006_santri_user.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='santri',</span> <span class="pre">name='user',</span> <span class="pre">field=&lt;django.db.models.fields.related.OneToOneField&gt;&gt;]</span></em><a class="headerlink" href="#eas.migrations.0006_santri_user.Migration.operations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.migrations.0007_nilai_durasi_detik">
+<span id="eas-migrations-0007-nilai-durasi-detik-module"></span><h2>eas.migrations.0007_nilai_durasi_detik module<a class="headerlink" href="#module-eas.migrations.0007_nilai_durasi_detik" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.migrations.0007_nilai_durasi_detik.Migration">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.migrations.0007_nilai_durasi_detik.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/migrations/0007_nilai_durasi_detik.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.migrations.0007_nilai_durasi_detik.Migration" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0007_nilai_durasi_detik.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('eas',</span> <span class="pre">'0006_santri_user')]</span></em><a class="headerlink" href="#eas.migrations.0007_nilai_durasi_detik.Migration.dependencies" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0007_nilai_durasi_detik.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='nilai',</span> <span class="pre">name='durasi_detik',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;]</span></em><a class="headerlink" href="#eas.migrations.0007_nilai_durasi_detik.Migration.operations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.migrations.0008_alter_nilai_durasi_detik">
+<span id="eas-migrations-0008-alter-nilai-durasi-detik-module"></span><h2>eas.migrations.0008_alter_nilai_durasi_detik module<a class="headerlink" href="#module-eas.migrations.0008_alter_nilai_durasi_detik" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eas.migrations.0008_alter_nilai_durasi_detik.Migration">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">eas.migrations.0008_alter_nilai_durasi_detik.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/eas/migrations/0008_alter_nilai_durasi_detik.html#Migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eas.migrations.0008_alter_nilai_durasi_detik.Migration" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0008_alter_nilai_durasi_detik.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('eas',</span> <span class="pre">'0007_nilai_durasi_detik')]</span></em><a class="headerlink" href="#eas.migrations.0008_alter_nilai_durasi_detik.Migration.dependencies" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eas.migrations.0008_alter_nilai_durasi_detik.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='nilai',</span> <span class="pre">name='durasi_detik',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;]</span></em><a class="headerlink" href="#eas.migrations.0008_alter_nilai_durasi_detik.Migration.operations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eas.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-eas.migrations" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="eas.html" class="btn btn-neutral float-left" title="eas package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tugasakhir.html" class="btn btn-neutral float-right" title="tugasakhir package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Grha Gandana Putra.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

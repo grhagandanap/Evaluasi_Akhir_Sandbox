@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Beranda{% endblock %}
+{% block title %}Home{% endblock %}
+
 {% block content %}
-<div class="text-center mt-5">
-  <h1>Selamat Datang di Aplikasi Evaluasi Akhir Sandbox</h1>
-  <img src="{% static 'images/logo_eas.png' %}" alt="Welcome Image" class="img-fluid my-4" style="max-width: 400px;">
-  <p class="lead">Silakan login untuk mulai mengerjakan evaluasi.</p>
+<div class="home-section">
+  <div class="hero-card shadow-lg p-5 mx-auto text-center">
+    <h1 class="hero-title">Selamat Datang di Aplikasi Evaluasi Akhir Sandbox</h1>
+    <img src="{% static 'images/logo_eas.png' %}" alt="Welcome Image" class="hero-img my-4">
+    <p class="hero-lead">Silakan login untuk mulai mengerjakan evaluasi dan mengukur kemampuanmu secara akurat.</p>
+
+    {% if not user.is_authenticated %}
+      <a href="{% url 'login' %}" class="btn btn-primary btn-lg mt-3">Login Sekarang</a>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}

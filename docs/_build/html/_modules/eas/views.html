@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eas.views &mdash; Evaluasi Akhir Sandbox 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Evaluasi Akhir Sandbox
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../eas.html">eas package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tugasakhir.html">tugasakhir package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Evaluasi Akhir Sandbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">eas.views</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for eas.views</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.shortcuts</span><span class="w"> </span><span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">redirect</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.auth.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Soal</span><span class="p">,</span> <span class="n">Santri</span><span class="p">,</span> <span class="n">Nilai</span><span class="p">,</span> <span class="n">Evaluasi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.forms</span><span class="w"> </span><span class="kn">import</span> <span class="n">EvaluasiForm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+
+<div class="viewcode-block" id="home">
+<a class="viewcode-back" href="../../eas.html#eas.views.home">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View for the homepage.</span>
+
+<span class="sd">    If the user is already authenticated, redirect them to the main dashboard (`index` view).</span>
+<span class="sd">    Otherwise, render the homepage for unauthenticated visitors.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    request : HttpRequest</span>
+<span class="sd">        The HTTP request object.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    HttpResponse</span>
+<span class="sd">        - Redirects to the dashboard if logged in.</span>
+<span class="sd">        - Renders &#39;home.html&#39; template otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;home.html&#39;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="index">
+<a class="viewcode-back" href="../../eas.html#eas.views.index">[docs]</a>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dashboard view for authenticated users.</span>
+
+<span class="sd">    Displays the user&#39;s profile information and checks if the user</span>
+<span class="sd">    has already completed the evaluation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    request : HttpRequest</span>
+<span class="sd">        The HTTP request object from the logged-in user.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    HttpResponse</span>
+<span class="sd">        Renders &#39;index.html&#39; template with:</span>
+<span class="sd">        - `santri`: The Santri (student) object linked to the user.</span>
+<span class="sd">        - `sudah_mengerjakan`: Boolean indicating if the user has taken the test.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">santri</span> <span class="o">=</span> <span class="n">Santri</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+    <span class="n">sudah_mengerjakan</span> <span class="o">=</span> <span class="n">Nilai</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">santri</span><span class="o">=</span><span class="n">santri</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;santri&#39;</span><span class="p">:</span> <span class="n">santri</span><span class="p">,</span>
+        <span class="s1">&#39;sudah_mengerjakan&#39;</span><span class="p">:</span> <span class="n">sudah_mengerjakan</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="evaluasi">
+<a class="viewcode-back" href="../../eas.html#eas.views.evaluasi">[docs]</a>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">evaluasi</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View for conducting the evaluation (quiz/exam).</span>
+
+<span class="sd">    - Prevents users who have already completed the test from re-taking it.</span>
+<span class="sd">    - Randomly selects a set of questions (4 by default) and stores them in the session.</span>
+<span class="sd">    - On form submission, evaluates answers, records individual results, and stores the final score.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    request : HttpRequest</span>
+<span class="sd">        The HTTP request object.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    HttpResponse</span>
+<span class="sd">        - Renders &#39;evaluasi.html&#39; with the evaluation form if GET request.</span>
+<span class="sd">        - Redirects to &#39;peringkat&#39; (ranking page) after successful submission.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - `EvaluasiForm` is dynamically built with question instances.</span>
+<span class="sd">    - Session key `soal_ids` stores selected question IDs to ensure consistency during submission.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">santri</span> <span class="o">=</span> <span class="n">Santri</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+
+    <span class="c1"># Prevent re-evaluation</span>
+    <span class="k">if</span> <span class="n">Nilai</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">santri</span><span class="o">=</span><span class="n">santri</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Retrieve or create a random set of questions</span>
+    <span class="n">soal_ids</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;soal_ids&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">soal_ids</span><span class="p">:</span>
+        <span class="n">soal_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Soal</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="n">soal_ids</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">semua_soal</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Soal</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+        <span class="n">soal_list</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">semua_soal</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;soal_ids&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">soal_list</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">EvaluasiForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">soal_list</span><span class="o">=</span><span class="n">soal_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">benar</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">soal</span> <span class="ow">in</span> <span class="n">soal_list</span><span class="p">:</span>
+                <span class="n">jawaban_user</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;jawaban_</span><span class="si">{</span><span class="n">soal</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="n">jawaban_benar</span> <span class="o">=</span> <span class="n">soal</span><span class="o">.</span><span class="n">jawaban_benar</span>
+                <span class="n">is_correct</span> <span class="o">=</span> <span class="n">jawaban_user</span> <span class="o">==</span> <span class="n">jawaban_benar</span>
+
+                <span class="k">if</span> <span class="n">is_correct</span><span class="p">:</span>
+                    <span class="n">benar</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="c1"># Save detailed answer result</span>
+                <span class="n">Evaluasi</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+                    <span class="n">santri</span><span class="o">=</span><span class="n">santri</span><span class="p">,</span>
+                    <span class="n">soal</span><span class="o">=</span><span class="n">soal</span><span class="p">,</span>
+                    <span class="n">jawaban_santri</span><span class="o">=</span><span class="n">jawaban_user</span><span class="p">,</span>
+                    <span class="n">is_correct</span><span class="o">=</span><span class="n">is_correct</span>
+                <span class="p">)</span>
+
+            <span class="c1"># Calculate score</span>
+            <span class="n">skor</span> <span class="o">=</span> <span class="p">(</span><span class="n">benar</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">soal_list</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+            <span class="n">durasi</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;durasi_detik&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">0</span>
+
+            <span class="c1"># Save or update final score</span>
+            <span class="n">Nilai</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">update_or_create</span><span class="p">(</span>
+                <span class="n">santri</span><span class="o">=</span><span class="n">santri</span><span class="p">,</span>
+                <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;nilai_akhir&#39;</span><span class="p">:</span> <span class="n">skor</span><span class="p">,</span> <span class="s1">&#39;durasi_detik&#39;</span><span class="p">:</span> <span class="n">durasi</span><span class="p">}</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Clear session data</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;soal_ids&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;peringkat&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">EvaluasiForm</span><span class="p">(</span><span class="n">soal_list</span><span class="o">=</span><span class="n">soal_list</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;evaluasi.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;form&#39;</span><span class="p">:</span> <span class="n">form</span><span class="p">})</span></div>
+
+
+
+<div class="viewcode-block" id="arsip">
+<a class="viewcode-back" href="../../eas.html#eas.views.arsip">[docs]</a>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">arsip</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View for displaying the user&#39;s evaluation archive.</span>
+
+<span class="sd">    Shows all questions the user has answered, along with correctness information</span>
+<span class="sd">    and the computed overall score.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    request : HttpRequest</span>
+<span class="sd">        The HTTP request from the authenticated user.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    HttpResponse</span>
+<span class="sd">        Renders &#39;arsip.html&#39; template with:</span>
+<span class="sd">        - `arsip_list`: All question-answer records of the user.</span>
+<span class="sd">        - `benar_count`: Total number of correct answers.</span>
+<span class="sd">        - `total_soal`: Total number of answered questions.</span>
+<span class="sd">        - `skor`: Computed overall score (integer percentage).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">santri</span> <span class="o">=</span> <span class="n">Santri</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+    <span class="n">arsip_list</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Evaluasi</span><span class="o">.</span><span class="n">objects</span>
+        <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">santri</span><span class="o">=</span><span class="n">santri</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;soal&#39;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">prefetch_related</span><span class="p">(</span><span class="s1">&#39;soal__pilihan&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">benar_count</span> <span class="o">=</span> <span class="n">arsip_list</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">is_correct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="n">total_soal</span> <span class="o">=</span> <span class="n">arsip_list</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="n">skor</span> <span class="o">=</span> <span class="p">(</span><span class="n">benar_count</span> <span class="o">/</span> <span class="n">total_soal</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="k">if</span> <span class="n">total_soal</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;arsip_list&#39;</span><span class="p">:</span> <span class="n">arsip_list</span><span class="p">,</span>
+        <span class="s1">&#39;benar_count&#39;</span><span class="p">:</span> <span class="n">benar_count</span><span class="p">,</span>
+        <span class="s1">&#39;total_soal&#39;</span><span class="p">:</span> <span class="n">total_soal</span><span class="p">,</span>
+        <span class="s1">&#39;skor&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">skor</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;arsip.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="peringkat">
+<a class="viewcode-back" href="../../eas.html#eas.views.peringkat">[docs]</a>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">peringkat</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View for displaying the ranking leaderboard.</span>
+
+<span class="sd">    Lists all participants (`Nilai` records) ordered by their final scores (`nilai_akhir`).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    request : HttpRequest</span>
+<span class="sd">        The HTTP request from the authenticated user.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    HttpResponse</span>
+<span class="sd">        Renders &#39;peringkat.html&#39; template with:</span>
+<span class="sd">        - `peringkat`: List of all users sorted by score (descending).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">peringkat_list</span> <span class="o">=</span> <span class="n">Nilai</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-nilai_akhir&#39;</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;peringkat&#39;</span><span class="p">:</span> <span class="n">peringkat_list</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;peringkat.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Grha Gandana Putra.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

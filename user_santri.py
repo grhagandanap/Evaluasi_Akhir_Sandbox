@@ -9,7 +9,6 @@ def generate_username(nama):
     suffix = ''.join(random.choices(string.digits, k=3))
     return f"{base}{suffix}"
 
-
 def generate_password():
     # Password default untuk semua santri (bisa diubah di admin)
     return "santri123"

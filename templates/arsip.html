@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Arsip Evaluasi{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="text-center fw-bold text-primary mb-4">Arsip Evaluasi</h2>
+
+  {% if arsip_list %}
+    <div class="alert alert-success text-center fs-5">
+      Skor Anda: <strong>{{ skor|floatformat:0 }}</strong>
+    </div>
+
+    {% for record in arsip_list %}
+      <div class="card mb-3 shadow-sm border-0 rounded-3">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Soal {{ forloop.counter }}</h5>
+          <p class="fs-5">{{ record.soal.teks_soal }}</p>
+
+          {% for pilihan in record.soal.pilihan.all %}
+            {% with kode=pilihan.kode_pilihan user=record.jawaban_santri benar=record.soal.jawaban_benar %}
+              <div class="form-check mb-1">
+                <input type="radio" class="form-check-input" disabled
+                       {% if kode == user %}checked{% endif %}>
+
+                <label class="form-check-label 
+                    {% if kode == benar %}text-success fw-semibold
+                    {% elif kode == user and user != benar %}text-danger fw-semibold
+                    {% endif %}">
+                  {{ kode }}. {{ pilihan.teks_pilihan }}  
+                  {% if kode == benar %} ✅{% endif %}
+                  {% if kode == user and user != benar %} ❌{% endif %}
+                </label>
+              </div>
+            {% endwith %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+
+  {% else %}
+    <div class="alert alert-info text-center">Belum ada arsip evaluasi.</div>
+  {% endif %}
+</div>
+{% endblock %}

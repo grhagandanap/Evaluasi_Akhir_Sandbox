@@ -2,38 +2,48 @@
 {% block title %}Peringkat{% endblock %}
 
 {% block content %}
-<div class="container mt-4" data-aos="fade-up">
-  <h2 class="text-center mb-4 fw-bold text-primary">Peringkat Santri</h2>
-
-  <table class="table table-hover shadow-sm rounded-3 overflow-hidden">
-    <thead class="table-primary">
-      <tr>
-        <th>Peringkat</th>
-        <th>Santri ID</th>
-        <th>Nama</th>
-        <th>Skor</th>
-        <th>Durasi</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for nilai in peringkat %}
-      <tr class="{% if forloop.counter == 1 %}table-success fw-bold{% elif forloop.counter == 2 %}table-warning fw-semibold{% elif forloop.counter == 3 %}table-info{% endif %}">
-        <td>{{ forloop.counter }}</td>
-        <td>{{ nilai.santri.santri_id }}</td>
-        <td>{{ nilai.santri.nama }}</td>
-        <td>{{ nilai.nilai_akhir|floatformat:0 }}</td>
-        <td>{{ nilai.durasi_detik }}s</td>
-      </tr>
-      {% empty %}
-      <tr>
-        <td colspan="5" class="text-center text-muted py-3">Belum ada nilai</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-
-  <div class="text-center mt-4">
-    <a href="{% url 'index' %}" class="btn btn-outline-primary">⬅️ Kembali ke Home</a>
+<div class="container mt-5 mb-5">
+  <div class="leaderboard-card p-4 shadow-lg mx-auto">
+    <h2 class="text-center mb-4 fw-bold text-primary">Peringkat Santri</h2>
+    
+    <div class="table-responsive">
+      <table class="table leaderboard-table table-hover align-middle text-center">
+        <thead>
+          <tr>
+            <th>Peringkat</th>
+            <th>NIP Santri</th>
+            <th>Nama Santri</th>
+            <th>Skor</th>
+            <th>Durasi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for nilai in peringkat %}
+          <tr class="{% if forloop.counter == 1 %}rank-1{% elif forloop.counter == 2 %}rank-2{% elif forloop.counter == 3 %}rank-3{% endif %}">
+            <td>
+              {% if forloop.counter == 1 %}
+                🥇
+              {% elif forloop.counter == 2 %}
+                🥈
+              {% elif forloop.counter == 3 %}
+                🥉
+              {% else %}
+                {{ forloop.counter }}
+              {% endif %}
+            </td>
+            <td>{{ nilai.santri.santri_id }}</td>
+            <td>{{ nilai.santri.nama }}</td>
+            <td>{{ nilai.nilai_akhir|floatformat:0 }}</td>
+            <td>{{ nilai.durasi_detik }}s</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="4" class="text-muted">Belum ada data evaluasi.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 {% endblock %}

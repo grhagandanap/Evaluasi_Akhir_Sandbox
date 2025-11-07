@@ -1,0 +1,188 @@
+/* ================================
+   MuniQuiz App - Clean & Elegant Theme
+   ================================ */
+
+/* 🔹 Global Styles */
+body {
+  background-color: #f9fafc;
+  color: #333;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 🔹 Navbar */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 0.6rem 2rem;
+}
+
+.navbar-brand {
+  color: #2c3e50 !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.navbar .btn {
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar .btn-primary {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+}
+
+.navbar .btn-primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* 🔹 Hero Section (Home page) */
+.hero, .home-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1, .home-section h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.hero p, .home-section p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 15px;
+}
+
+.hero img, .home-section img {
+  max-width: 220px;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero img:hover, .home-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* 🔹 Cards */
+.card {
+  background-color: #fff;
+  color: #2c3e50;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.card-header {
+  background-color: #3498db !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* 🔹 Buttons */
+.btn-primary, .btn-success, .btn-outline-primary {
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border: none;
+  color: #fff;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  border: none;
+  color: #fff;
+}
+
+.btn-outline-primary {
+  color: #3498db;
+  border: 2px solid #3498db;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* 🔹 Tables */
+.table {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.table th {
+  background-color: #3498db;
+  color: #fff;
+  font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f5f8;
+}
+
+/* 🔹 Evaluasi Timer */
+#timer-box {
+  background-color: #3498db;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 🔹 Form Inputs / Radio Buttons */
+.form-check-label {
+  font-size: 1rem;
+}
+
+.form-check-input:disabled {
+  cursor: not-allowed;
+}
+
+.text-success {
+  color: #2ecc71 !important;
+}
+
+.text-danger {
+  color: #e74c3c !important;
+}
+
+/* 🔹 Alerts */
+.alert {
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+/* 🔹 Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

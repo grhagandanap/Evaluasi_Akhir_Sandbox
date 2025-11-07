@@ -8,11 +8,16 @@
 
   <div class="card shadow-lg mx-auto border-0" style="max-width: 500px;">
     <div class="card-body">
-      <!-- Ikon buku biru -->
       <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" width="120" class="mb-3" alt="Flat Blue Book Icon">
 
-      <h5 class="fw-semibold">Siap untuk mengerjakan evaluasi?</h5>
-      <a href="{% url 'evaluasi' %}" class="btn btn-primary mt-3 px-4 py-2">🚀 Mulai Evaluasi Sekarang</a>
+      {% if sudah_mengerjakan %}
+        <h5 class="fw-semibold text-success mb-3">✅ Anda sudah menyelesaikan evaluasi!</h5>
+        <a href="{% url 'peringkat' %}" class="btn btn-primary mt-2 px-4 py-2">Lihat Peringkat</a>
+        <a href="{% url 'arsip' %}" class="btn btn-outline-primary mt-2 px-4 py-2">Lihat Arsip</a>
+      {% else %}
+        <h5 class="fw-semibold">Siap untuk mengerjakan evaluasi?</h5>
+        <a href="{% url 'evaluasi' %}" class="btn btn-success mt-3 px-4 py-2">Mulai Evaluasi Sekarang</a>
+      {% endif %}
     </div>
   </div>
 </div>
